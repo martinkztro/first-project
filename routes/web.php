@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PruebaController;
+use App\Http\Controllers\UseController;
 
 
 Route::get('/', function () {
@@ -34,3 +34,5 @@ Route::get('/{calculadora}/{num1}/{num2}', function ($calculadora, $num1, $num2)
 Route::get('/vista/{name}', function ($name) {
     return view('prueba ', ['name' => $name]);
 })-> whereAlpha('name');
+
+Route::get('/prueba/{name}', [UseController::class, 'index']);
